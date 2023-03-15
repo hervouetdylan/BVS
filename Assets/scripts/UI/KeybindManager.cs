@@ -55,11 +55,6 @@ public class KeybindManager : MonoBehaviour
 
         currentDictionary[key] = keyBind;
         UIManager.MyInstance.UpdateKeyText(key, keyBind);
-        foreach (var item in currentDictionary)
-        {
-            Debug.Log(item);
-        }
-        Debug.Log(currentDictionary);
         bindName = string.Empty;
     }
     // Update is called once per frame

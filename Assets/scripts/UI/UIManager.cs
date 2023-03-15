@@ -8,11 +8,11 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField]
-    private CanvasGroup editor;
+    //[SerializeField]
+    //private CanvasGroup editor;
 
-    [SerializeField]
-    private CanvasGroup inventory;
+    //[SerializeField]
+    //private CanvasGroup inventory;
     
     [SerializeField]
     private CanvasGroup[] menus;
@@ -60,12 +60,12 @@ public class UIManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.V))
         {
-            OpenClose(editor);
+            OpenClose(menus[3]);
             IsEditor = IsEditor == true ? false:true;
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
-            OpenClose(inventory);
+            OpenClose(menus[2]);
         }
     }
 

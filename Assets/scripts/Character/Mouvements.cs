@@ -25,7 +25,7 @@ public class Mouvements : MonoBehaviour
     void Update(){
         InputMovement();
         InputAction();
-
+        
 
     }
     void FixedUpdate(){
