@@ -22,12 +22,12 @@ public class InventoryScript : MonoBehaviour
 
     public List<Item> items = new List<Item>();
 
-    public int size = 20;
+    public int size = 16;
 
     // Start is called before the first frame update
     public void Add(Item item)
     {
-        if (items.Count <=20)
+        if (items.Count <=size)
         {
             items.Add(item);
             if (OnItemChangedCallBack != null) 

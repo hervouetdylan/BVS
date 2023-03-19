@@ -17,16 +17,17 @@ public class Mouvements : MonoBehaviour
     public UIManager UIManager;
     private Vector2 lastDir;
 
+    Item item;
+
+    InventoryScript inventaire;
     public void Start(){
         rb = GetComponent<Rigidbody2D>();
-
+        inventaire = InventoryScript.instance;
     }
 
     void Update(){
         InputMovement();
         InputAction();
-        
-
     }
     void FixedUpdate(){
         rb.velocity = new Vector2(moveDir.x*moveSpeed,moveDir.y*moveSpeed);
@@ -95,9 +96,12 @@ public class Mouvements : MonoBehaviour
             Vector2 Dir = new Vector2(rb.position.x + lastDir.x, rb.position.y + lastDir.y);
             RaycastHit2D hit = Physics2D.Raycast(Dir, Vector2.zero);
             Debug.Log(hit.collider.gameObject.name);
-            if (hit.collider.gameObject.name == "Chest(Clone)")
+            if (hit.collider.gameObject.tag == "Chest")
             {
-                // UIManager.OpenClose();
+                item = hit.collider.gameObject.GetComponent<ChestScript>().item;
+                inventaire.Add(item);
+                hit.collider.gameObject.GetComponent<ChestScript>().animator.Play("Coffre");               
+
             }
         }
         
