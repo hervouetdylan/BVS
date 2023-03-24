@@ -10,6 +10,8 @@ public class enemy : MonoBehaviour
 
     private bool rangeAttack = false;
 
+    public int damageOnCollision = 10;
+
     public bool RangeAttack
     {
         get{return rangeAttack;}
@@ -75,7 +77,7 @@ public class enemy : MonoBehaviour
         if(collision.transform.CompareTag("Player"))
         {
             PlayerHealth playerHealth = collision.transform.GetComponent<PlayerHealth>();
-            playerHealth.TakeDamage(10);
+            playerHealth.TakeDamage(damageOnCollision);
         }
     }
 }
