@@ -4,7 +4,11 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 23
+<<<<<<< HEAD
   productGUID: 312efd0125f83c543b52fd95431169a3
+=======
+  productGUID: 9d08e19ed1f18d84495e48d7ad01b73e
+>>>>>>> f56964835105867a227e39af650fde4a2f6a1347
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +17,11 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
+<<<<<<< HEAD
   productName: 2D Game
+=======
+  productName: GameProgrammingProjetFinal
+>>>>>>> f56964835105867a227e39af650fde4a2f6a1347
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -236,7 +244,11 @@ PlayerSettings:
   appleEnableProMotion: 0
   shaderPrecisionModel: 0
   clonedFromGUID: 10ad67313f4034357812315f3c407484
+<<<<<<< HEAD
   templatePackageId: com.unity.template.2d@6.1.2
+=======
+  templatePackageId: com.unity.template.2d@6.1.1
+>>>>>>> f56964835105867a227e39af650fde4a2f6a1347
   templateDefaultScene: Assets/Scenes/SampleScene.unity
   useCustomMainManifest: 0
   useCustomLauncherManifest: 0
@@ -270,6 +282,7 @@ PlayerSettings:
   AndroidValidateAppBundleSize: 1
   AndroidAppBundleSizeToValidate: 150
   m_BuildTargetIcons: []
+<<<<<<< HEAD
   m_BuildTargetPlatformIcons:
   - m_BuildTarget: Android
     m_Icons:
@@ -365,6 +378,10 @@ PlayerSettings:
       m_SubKind: 
   m_BuildTargetBatching: []
   m_BuildTargetShaderSettings: []
+=======
+  m_BuildTargetPlatformIcons: []
+  m_BuildTargetBatching: []
+>>>>>>> f56964835105867a227e39af650fde4a2f6a1347
   m_BuildTargetGraphicsJobs:
   - m_BuildTarget: MacStandaloneSupport
     m_GraphicsJobs: 0
@@ -401,8 +418,11 @@ PlayerSettings:
     m_APIs: 10000000
     m_Automatic: 1
   m_BuildTargetVRSettings: []
+<<<<<<< HEAD
   m_DefaultShaderChunkSizeInMB: 16
   m_DefaultShaderChunkCount: 0
+=======
+>>>>>>> f56964835105867a227e39af650fde4a2f6a1347
   openGLRequireES31: 0
   openGLRequireES31AEP: 0
   openGLRequireES32: 0
@@ -565,7 +585,10 @@ PlayerSettings:
   switchNetworkInterfaceManagerInitializeEnabled: 1
   switchPlayerConnectionEnabled: 1
   switchUseNewStyleFilepaths: 0
+<<<<<<< HEAD
   switchUseLegacyFmodPriorities: 1
+=======
+>>>>>>> f56964835105867a227e39af650fde4a2f6a1347
   switchUseMicroSleepForYield: 1
   switchEnableRamDiskSupport: 0
   switchMicroSleepForYieldTime: 25
@@ -665,7 +688,10 @@ PlayerSettings:
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
+<<<<<<< HEAD
   webGLPowerPreference: 2
+=======
+>>>>>>> f56964835105867a227e39af650fde4a2f6a1347
   scriptingDefineSymbols: {}
   additionalCompilerArguments: {}
   platformArchitecture: {}
@@ -677,7 +703,10 @@ PlayerSettings:
   allowUnsafeCode: 0
   useDeterministicCompilation: 1
   enableRoslynAnalyzers: 1
+<<<<<<< HEAD
   selectedPlatform: 0
+=======
+>>>>>>> f56964835105867a227e39af650fde4a2f6a1347
   additionalIl2CppArgs: 
   scriptingRuntimeVersion: 1
   gcIncremental: 1
@@ -754,8 +783,12 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
+<<<<<<< HEAD
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
+=======
+  activeInputHandler: 0
+>>>>>>> f56964835105867a227e39af650fde4a2f6a1347
   cloudProjectId: 
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
