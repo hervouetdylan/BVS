@@ -7,6 +7,9 @@ TagManager:
   - Keybind
   - Build
   - Chest
+  - Enemy
+  - PNG
+  - Shop
   layers:
   - Default
   - TransparentFX

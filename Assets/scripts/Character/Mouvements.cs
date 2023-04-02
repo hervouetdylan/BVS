@@ -16,8 +16,9 @@ public class Mouvements : MonoBehaviour
     public Camera mainCam;
     public UIManager UIManager;
     private Vector2 lastDir;
-
+    public GameObject bullet;
     Item item;
+    private float bulletSpeed = 8;
 
     InventoryScript inventaire;
     public void Start(){
@@ -69,12 +70,14 @@ public class Mouvements : MonoBehaviour
 
     public void InputAction()
     {
-        if (UIManager.IsEditor){
+        if (UIManager.IsEditor)
+        {
             if (Input.GetButtonDown("Fire1"))
             {
                 mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
                 RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
-                if(!hit.collider){
+                if (!hit.collider)
+                {
                     mousePos.x = (float)Math.Round(mousePos.x);
                     mousePos.y = (float)Math.Round(mousePos.y);
                     Instantiate(prefab, mousePos, transform.rotation);
@@ -82,13 +85,34 @@ public class Mouvements : MonoBehaviour
             }
             if (Input.GetMouseButtonDown(1))
             {
+
                 mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
                 RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
                 Debug.Log(hit.collider.gameObject.name);
-                if (hit.collider != null && hit.collider.gameObject.tag== "Build") {
+                if (hit.collider != null && hit.collider.gameObject.tag == "Build")
+                {
                     Debug.Log(hit.collider.gameObject.name);
                     Destroy(hit.collider.gameObject);
                 }
+            }
+        }
+        else
+        {
+            if (Input.GetButtonDown("Fire1"))
+            {
+                var bulletx = 1;
+                int degrees=0;
+                if (lastDir.y !=0)
+                {
+                    degrees = 90;
+                    bulletx = 0;
+                }
+                Vector2 Dir = new Vector2(rb.position.x + lastDir.x * bulletx, rb.position.y + lastDir.y);
+
+                GameObject a = Instantiate(bullet, Dir, transform.rotation);
+                a.transform.rotation = Quaternion.Euler(Vector3.forward * degrees);
+                Rigidbody2D rbBullet = a.GetComponent<Rigidbody2D>();
+                rbBullet.velocity = new Vector2(lastDir.x * bulletSpeed * bulletx, lastDir.y * bulletSpeed);
             }
         }
         if (Input.GetKeyDown(KeyCode.F))
@@ -102,6 +126,13 @@ public class Mouvements : MonoBehaviour
                 inventaire.Add(item);
                 hit.collider.gameObject.GetComponent<ChestScript>().animator.Play("Coffre");               
 
+            }else if (hit.collider.gameObject.tag == "Shop")
+            {
+                hit.collider.gameObject.GetComponent<Shop>().OpenShop();
+            }
+            else if (hit.collider.gameObject.tag == "PNG")
+            {
+                hit.collider.gameObject.GetComponent<TriggerDialogue>().DialogueTrigger();
             }
         }
         
