@@ -16,6 +16,18 @@ public class Mouvements : MonoBehaviour
     public Camera mainCam;
     public UIManager UIManager;
     private Vector2 lastDir;
+    public bool isDead = false;
+    public static Mouvements instance;
+
+    private void Awake() 
+    {
+        if(instance != null)
+        {
+            Debug.LogWarning("Il y a plus d'un instance de Mouvements dans la scène");
+            return;
+        }
+        instance = this;
+    }
 
     public void Start(){
         rb = GetComponent<Rigidbody2D>();
@@ -23,8 +35,10 @@ public class Mouvements : MonoBehaviour
     }
 
     void Update(){
-        InputMovement();
-        InputAction();
+        if(!isDead){
+            InputMovement();
+            InputAction();
+        }
         
 
     }

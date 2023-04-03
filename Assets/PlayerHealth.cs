@@ -16,6 +16,18 @@ public class PlayerHealth : MonoBehaviour
 
     public SpriteRenderer graphics;
 
+    public static PlayerHealth instance;
+
+    private void Awake() 
+    {
+        if(instance != null)
+        {
+            Debug.LogWarning("Il y a plus d'un instance de PayerHealth dans la scène");
+            return;
+        }
+        instance = this;
+    }
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -27,7 +39,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.H))
         {
-            TakeDamage(20);
+            TakeDamage(60);
         }
     }
 
@@ -37,10 +49,25 @@ public class PlayerHealth : MonoBehaviour
         {
             currentHealth -= damage;
             healthBar.SetHealth(currentHealth);
+
+            if(currentHealth <= 0)
+            {
+                Die();
+                return;
+            }
+
             isInvicible = true;
             StartCoroutine(InvincibilityFlash());
             StartCoroutine(HandleInvincibilityDelay());
         }
+    }
+
+    public void Die()
+    {
+        Mouvements player = GameObject.Find("Player").GetComponent<Mouvements>();
+        player.isDead = true;
+        Debug.Log("Le joueur est iliminé");
+        player.animator.SetTrigger("Die");
     }
 
     public IEnumerator InvincibilityFlash()
