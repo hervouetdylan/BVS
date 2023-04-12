@@ -42,10 +42,7 @@ public class Mouvements : MonoBehaviour
     }
 
     void Update(){
-        if(!isDead){
-            InputMovement();
-            InputAction();
-        }
+      
         
 
     }
@@ -60,7 +57,7 @@ public class Mouvements : MonoBehaviour
 
     public void OnMove(InputValue value)
     {
-        if (!inAction)
+        if (!inAction && !isDead)
         {
             moveDir = value.Get<Vector2>();
             if (moveDir.x != 0 || moveDir.y != 0)
@@ -76,7 +73,7 @@ public class Mouvements : MonoBehaviour
     }
     public void OnFire()
     {
-        if (inAction == false)
+        if (!inAction && !isDead)
         {
 
 
@@ -138,7 +135,7 @@ public class Mouvements : MonoBehaviour
     }
     public void OnInteraction()
     {
-        if (inAction == false)
+        if (!inAction && !isDead)
         {
 
 
