@@ -5959,7 +5959,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tilemap_278
+      name: OrangeDoor
       rect:
         serializedVersion: 2
         x: 221
@@ -5980,7 +5980,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tilemap_279
+      name: OrangeDoo
       rect:
         serializedVersion: 2
         x: 238
@@ -7723,7 +7723,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tilemap_362
+      name: BlueDoor
       rect:
         serializedVersion: 2
         x: 255
@@ -10302,6 +10302,7 @@ TextureImporter:
       tilemap_133: 877404386
       tilemap_124: -1138906535
       tilemap_125: -1322169145
+      OrangeDoor: -462453290
       tilemap_430: -792654279
       tilemap_478: -85725342
       tilemap_68: -1721456612
@@ -10382,7 +10383,6 @@ TextureImporter:
       tilemap_251: 1850103408
       tilemap_241: 1061617409
       tilemap_421: 589384966
-      tilemap_279: -2109280106
       tilemap_183: -74421162
       tilemap_361: 171411890
       tilemap_150: 1957358166
@@ -10411,7 +10411,6 @@ TextureImporter:
       tilemap_371: 526361639
       tilemap_403: -1011489046
       tilemap_21: 551849088
-      tilemap_278: -462453290
       tilemap_373: 976457554
       tilemap_412: -697234875
       tilemap_245: -1933200739
@@ -10561,6 +10560,7 @@ TextureImporter:
       tilemap_136: 1781600423
       tilemap_214: 1790409926
       tilemap_343: 1106491049
+      BlueDoor: 1515390775
       tilemap_75: -2013011308
       tilemap_268: 2035614838
       tilemap_468: 501042766
@@ -10599,6 +10599,7 @@ TextureImporter:
       tilemap_467: 1990182843
       tilemap_96: -44579016
       tilemap_312: 238870210
+      OrangeDoo: -2109280106
       tilemap_276: -1582354683
       tilemap_264: 20001474
       tilemap_33: -1344167020
@@ -10704,7 +10705,6 @@ TextureImporter:
       tilemap_431: 1344504357
       tilemap_121: -1903604467
       tilemap_36: 2137366597
-      tilemap_362: 1515390775
       tilemap_411: -1997900248
       tilemap_169: 1647321905
       tilemap_389: 332959961
