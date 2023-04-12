@@ -6,14 +6,22 @@ public class bulletSript : MonoBehaviour
 {
     // Start is called before the first frame update
     private Collider2D col;
+    private Transform Player;
     void Start()
     {
-        col = GetComponent<Collider2D>();
+
+        Player = FindObjectOfType<Mouvements>().transform;
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log(Vector2.Distance(Player.position, this.transform.position));
+        //Debug.Log(Player.position.x+" "+Player.position.y);
+        if(Vector2.Distance(Player.position,this.transform.position)>50)
+        {
+            Destroy(this.gameObject);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 
 public class DialogueManager : MonoBehaviour
@@ -11,10 +12,13 @@ public class DialogueManager : MonoBehaviour
     public Text dialogueText;
     public Animator animator;
     private Queue<string> sentences;
+    private Mouvements mouv;
+    public Button button;
 
     void Start()
     {
         sentences = new Queue<string>();
+        mouv = FindObjectOfType<Mouvements>();
     }
 
     // Update is called once per frame
@@ -29,6 +33,8 @@ public class DialogueManager : MonoBehaviour
             sentences.Enqueue(sentence);
         }
         DisplayNextSentence();
+        mouv.inAction = !mouv.inAction;
+        EventSystem.current.SetSelectedGameObject(button.gameObject);
 
     }
 
@@ -59,6 +65,7 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue()
     {
         animator.SetBool("isOpen", false);
+        mouv.inAction = !mouv.inAction;
 
     }
 }

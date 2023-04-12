@@ -3,17 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-<<<<<<< HEAD
-  tags:
-  - Keybind
-  - Build
-  - Chest
-  - Enemy
-  - PNG
-  - Shop
-=======
   tags: []
->>>>>>> f56964835105867a227e39af650fde4a2f6a1347
   layers:
   - Default
   - TransparentFX
@@ -21,11 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-<<<<<<< HEAD
-  - Build
-=======
   - 
->>>>>>> f56964835105867a227e39af650fde4a2f6a1347
   - 
   - 
   - 
