@@ -10,6 +10,8 @@ public class enemy : MonoBehaviour
 
     private bool rangeAttack = false;
 
+    public int damageOnCollision = 10;
+
     public bool RangeAttack
     {
         get{return rangeAttack;}
@@ -68,5 +70,14 @@ public class enemy : MonoBehaviour
         currentState = newState;
 
         currentState.Enter(this);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision) 
+    {
+        if(collision.transform.CompareTag("Player"))
+        {
+            PlayerHealth playerHealth = collision.transform.GetComponent<PlayerHealth>();
+            playerHealth.TakeDamage(damageOnCollision);
+        }
     }
 }

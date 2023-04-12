@@ -21,6 +21,19 @@ public class Mouvements : MonoBehaviour
     public bool inAction = false;
     InventoryScript inventaire;
     UIManager ui;
+    public bool isDead = false;
+    public static Mouvements instance;
+
+    private void Awake() 
+    {
+        if(instance != null)
+        {
+            Debug.LogWarning("Il y a plus d'un instance de Mouvements dans la scène");
+            return;
+        }
+        instance = this;
+    }
+
     public void Start(){
         rb = GetComponent<Rigidbody2D>();
         inventaire = InventoryScript.instance;
@@ -29,7 +42,12 @@ public class Mouvements : MonoBehaviour
     }
 
     void Update(){
-       
+        if(!isDead){
+            InputMovement();
+            InputAction();
+        }
+        
+
     }
     void FixedUpdate(){
         rb.velocity = new Vector2(moveDir.x * moveSpeed, moveDir.y * moveSpeed);
