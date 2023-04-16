@@ -5,22 +5,32 @@ using UnityEngine.InputSystem;
 using System;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 
 public class UIManager : MonoBehaviour
 {
-    
+
     [SerializeField]
     private CanvasGroup[] menus;
     private GameObject[] keybindButtons;
-
+    [SerializeField]
+    private GameObject[] buttons;
+    private Mouvements player;
     private bool isEditor;
     private bool isPause;
+    private bool inAction = false;
 
     public bool IsEditor
     {
-        get{return isEditor;}
-        set{isEditor = value;}
+        get { return isEditor; }
+        set { isEditor = value; }
+    }
+
+    public bool InAction
+    {
+        get { return inAction; }
+        set { inAction = value; }
     }
 
     public bool IsPause
@@ -34,10 +44,11 @@ public class UIManager : MonoBehaviour
     {
         get
         {
-            if (instance == null){
+            if (instance == null)
+            {
                 instance = FindObjectOfType<UIManager>();
             }
-            return instance;    
+            return instance;
         }
     }
     // Start is called before the first frame update
@@ -46,8 +57,8 @@ public class UIManager : MonoBehaviour
     }
     private void Awake()
     {
-        keybindButtons=GameObject.FindGameObjectsWithTag("Keybind");
-
+        keybindButtons = GameObject.FindGameObjectsWithTag("Keybind");
+        player = FindObjectOfType<Mouvements>();
     }
     // Update is called once per frame
     void Update()
@@ -55,66 +66,66 @@ public class UIManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.V) && !IsPause)
         {
-            OpenClose(menus[3]);
-            IsEditor = IsEditor == true ? false:true;
+            menus[3].alpha = menus[3].alpha > 0 ? 0 : 1;
+            menus[3].blocksRaycasts = menus[3].blocksRaycasts == true ? false : true;
+            IsEditor = IsEditor == true ? false : true;
         }
         if (Input.GetKeyDown(KeyCode.E) && !IsPause)
         {
-            OpenClose(menus[2]);
+            menus[2].alpha = menus[2].alpha > 0 ? 0 : 1;
+            menus[2].blocksRaycasts = menus[2].blocksRaycasts == true ? false : true;
+            IsEditor = IsEditor == true ? false : true;
         }
     }
     public void enterMenu()
     {
         if (menus[0].alpha == 0)
         {
-            OpenSingle(menus[0]);
+            OpenClose(menus[0]);
             Time.timeScale = 0;
-            IsPause = IsPause == true ? false : true;
-            EventSystem.current.SetSelectedGameObject(menus[0].gameObject);
+            IsPause = true;
+            EventSystem.current.SetSelectedGameObject(buttons[0]);
 
         }
         else
         {
             CloseAll();
-            Time.timeScale = 1;
-            IsPause = IsPause == true ? false : true;
-
+            IsPause = false;
         }
     }
-    public void OpenClose(CanvasGroup canvasGroup){
-        canvasGroup.alpha = canvasGroup.alpha>0 ? 0 : 1;
+    public void OpenClose(CanvasGroup canvasGroup)
+    {
+        CloseAll();
+        Time.timeScale = 0;
+        InAction = true;
+
+        canvasGroup.alpha = canvasGroup.alpha > 0 ? 0 : 1;
         canvasGroup.blocksRaycasts = canvasGroup.blocksRaycasts == true ? false : true;
+        Debug.Log("UI :" + InAction);
     }
 
     public void UpdateKeyText(string key, KeyCode code)
     {
-        Text tmp = Array.Find(keybindButtons, x=> x.name == key).GetComponentInChildren<Text>();
+        Text tmp = Array.Find(keybindButtons, x => x.name == key).GetComponentInChildren<Text>();
         tmp.text = code.ToString();
     }
 
-    public void OpenSingle(CanvasGroup canvasGroup)
-    {
-        foreach (CanvasGroup canvas in menus)
-        {
-            CloseSingle(canvas);    
-        }
-        canvasGroup.alpha = canvasGroup.alpha > 0 ? 0:1;
-        canvasGroup.blocksRaycasts = canvasGroup.blocksRaycasts == true ? false:true;
-    }
-
-    public void CloseSingle(CanvasGroup canvasGroup)
-    {
-        canvasGroup.alpha = 0;
-        canvasGroup.blocksRaycasts = false;
-
-    }
 
     public void CloseAll()
     {
+        Time.timeScale = 1;
+        InAction = false;
+
         foreach (CanvasGroup canvas in menus)
         {
             canvas.alpha = 0;
             canvas.blocksRaycasts = false;
         }
     }
+
+
+    public void TitleScreen()
+        {
+            SceneManager.LoadScene("TitleScreen"); // Charge la scène "ScenePrincipale"
+        }
 }

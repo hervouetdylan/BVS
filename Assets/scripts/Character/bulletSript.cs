@@ -16,16 +16,16 @@ public class bulletSript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(Vector2.Distance(Player.position, this.transform.position));
-        //Debug.Log(Player.position.x+" "+Player.position.y);
-        if(Vector2.Distance(Player.position,this.transform.position)>50)
+        //Debug.Log(Player.position);
+        if (this != null && Player != null && Vector2.Distance(Player.position, this.transform.position) > 50)
         {
             Destroy(this.gameObject);
+
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.tag);
+        //Debug.Log(collision.gameObject.tag);
         if (collision.gameObject.tag == "Enemy")
         {
             Destroy(collision.gameObject);

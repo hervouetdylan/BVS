@@ -18,38 +18,36 @@ public class Mouvements : MonoBehaviour
     public GameObject bullet;
     Item item;
     private float bulletSpeed = 4;
-    public bool inAction = false;
     InventoryScript inventaire;
     UIManager ui;
     public bool isDead = false;
-    public static Mouvements instance;
-
-    private void Awake() 
+    
+    private void Awake()
     {
-        if(instance != null)
-        {
-            Debug.LogWarning("Il y a plus d'un instance de Mouvements dans la scène");
-            return;
-        }
-        instance = this;
     }
 
-    public void Start(){
+    public void Start()
+    {
         rb = GetComponent<Rigidbody2D>();
         inventaire = InventoryScript.instance;
         ui = FindObjectOfType<UIManager>();
-
+        Time.timeScale = 1;
     }
 
-    void Update(){
-      
-        
+    void Update()
+    {
+
+
 
     }
-    void FixedUpdate(){
-        rb.velocity = new Vector2(moveDir.x * moveSpeed, moveDir.y * moveSpeed);
-        animator.SetFloat("Horizontal",lastDir.x);
-        animator.SetFloat("Vertical",lastDir.y);
+    void FixedUpdate()
+    {
+        if (!ui.InAction && !isDead)
+        {
+            rb.velocity = new Vector2(moveDir.x * moveSpeed, moveDir.y * moveSpeed);
+        }
+        animator.SetFloat("Horizontal", lastDir.x);
+        animator.SetFloat("Vertical", lastDir.y);
         animator.SetFloat("Speed", moveDir.sqrMagnitude);
 
     }
@@ -57,14 +55,13 @@ public class Mouvements : MonoBehaviour
 
     public void OnMove(InputValue value)
     {
-        if (!inAction && !isDead)
+
+        moveDir = value.Get<Vector2>();
+        if (moveDir.x != 0 || moveDir.y != 0)
         {
-            moveDir = value.Get<Vector2>();
-            if (moveDir.x != 0 || moveDir.y != 0)
-            {
-                lastDir = moveDir;
-            }
+            lastDir = moveDir;
         }
+
     }
 
     public void OnMenu()
@@ -73,9 +70,8 @@ public class Mouvements : MonoBehaviour
     }
     public void OnFire()
     {
-        if (!inAction && !isDead)
+        if (!ui.InAction && !isDead)
         {
-
 
             if (UIManager.IsEditor)
             {
@@ -110,7 +106,7 @@ public class Mouvements : MonoBehaviour
 
                 GameObject bulletObj = Instantiate(bullet, Dir, transform.rotation);
 
-                Debug.Log(lastDir.x + " " + lastDir.y);
+                //Debug.Log(lastDir.x + " " + lastDir.y);
                 bulletObj.transform.rotation = Quaternion.Euler(Vector3.forward * degrees);
                 Rigidbody2D rbBullet = bulletObj.GetComponent<Rigidbody2D>();
                 rbBullet.velocity = new Vector2(Convert.ToSingle(Math.Round(lastDir.x)) * bulletSpeed * bulletx, Convert.ToSingle(Math.Round((lastDir.y) * bulletSpeed)));
@@ -135,7 +131,7 @@ public class Mouvements : MonoBehaviour
     }
     public void OnInteraction()
     {
-        if (!inAction && !isDead)
+        if (!ui.InAction && !isDead)
         {
 
 

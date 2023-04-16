@@ -12,13 +12,13 @@ public class DialogueManager : MonoBehaviour
     public Text dialogueText;
     public Animator animator;
     private Queue<string> sentences;
-    private Mouvements mouv;
+    private UIManager ui;
     public Button button;
 
     void Start()
     {
         sentences = new Queue<string>();
-        mouv = FindObjectOfType<Mouvements>();
+        ui = FindObjectOfType<UIManager>();
     }
 
     // Update is called once per frame
@@ -33,7 +33,7 @@ public class DialogueManager : MonoBehaviour
             sentences.Enqueue(sentence);
         }
         DisplayNextSentence();
-        mouv.inAction = !mouv.inAction;
+        ui.InAction = !ui.InAction;
         EventSystem.current.SetSelectedGameObject(button.gameObject);
 
     }
@@ -51,7 +51,7 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(TypeSentence(sentence));
     }
 
-    IEnumerator TypeSentence (string sentence)
+    IEnumerator TypeSentence(string sentence)
     {
         dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())
@@ -60,12 +60,12 @@ public class DialogueManager : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
             yield return null;
         }
-        
+
     }
     public void EndDialogue()
     {
         animator.SetBool("isOpen", false);
-        mouv.inAction = !mouv.inAction;
+        ui.InAction = !ui.InAction;
 
     }
 }

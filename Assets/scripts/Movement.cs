@@ -20,23 +20,6 @@ Rigidbody2D rb;
         InputManagement();
 
 
-        // animator.SetFloat("Horizontal",moveDir.x);
-        // animator.SetFloat("Vertical",moveDir.y);
-        // animator.SetFloat("Speed", moveDir.sqrMagnitude);
-
-
-        // if (Input.GetButtonDown("Fire1"))
-        // {
-        //     mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
-        //     mousePos.x = (float)Math.Round(mousePos.x);
-        //     mousePos.y = (float)Math.Round(mousePos.y);
-
-        //     Debug.Log(mousePos.x);
-        //     Debug.Log(mousePos.y);
-        //     Instantiate(prefab, mousePos, transform.rotation);
-
-
-        // }
 
     }
     void FixedUpdate(){

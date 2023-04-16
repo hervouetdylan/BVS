@@ -15,6 +15,8 @@ public class TitleScreenManager : MonoBehaviour
 
     public void Quit()
     {
-        Application.Quit() ;
+#if !UNITY_WEBGL
+        Application.Quit();
+#endif
     }
 }
