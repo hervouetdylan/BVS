@@ -211,10 +211,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Stone-path-tileset-horizontal_2: 1103115385
-      Stone-path-tileset-horizontal_1: -889830937
-      Stone-path-tileset-horizontal_3: 2104665067
       Stone-path-tileset-horizontal_0: -998361712
+      Stone-path-tileset-horizontal_1: -889830937
+      Stone-path-tileset-horizontal_2: 1103115385
+      Stone-path-tileset-horizontal_3: 2104665067
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

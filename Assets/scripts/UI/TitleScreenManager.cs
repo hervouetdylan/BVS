@@ -10,7 +10,9 @@ public class TitleScreenManager : MonoBehaviour
     public string NomDeScene;
 
     public GameObject button;
+    public GameObject buttonCredit;
 
+    public CanvasGroup canvasGroup;
     public void Start()
     {
         EventSystem.current.SetSelectedGameObject(button);
@@ -26,5 +28,23 @@ public class TitleScreenManager : MonoBehaviour
 #if !UNITY_WEBGL
         Application.Quit();
 #endif
+    }
+    public void goBack()
+    {
+        canvasGroup.alpha = 0;
+        canvasGroup.blocksRaycasts = false;
+        canvasGroup.interactable = false;
+
+        EventSystem.current.SetSelectedGameObject(button);
+
+    }
+    public void toCredit()
+    {
+        canvasGroup.alpha = 1;
+        canvasGroup.blocksRaycasts = true;
+        canvasGroup.interactable = true;
+
+        EventSystem.current.SetSelectedGameObject(buttonCredit);
+        
     }
 }

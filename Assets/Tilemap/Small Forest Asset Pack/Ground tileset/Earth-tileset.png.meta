@@ -337,15 +337,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Earth-tileset_8: -832828653
-      Earth-tileset_7: -372388365
+      Earth-tileset_0: -1098622817
+      Earth-tileset_1: -358014757
+      Earth-tileset_2: -1408983406
+      Earth-tileset_3: 390484127
+      Earth-tileset_4: -2118343381
       Earth-tileset_5: 62103026
       Earth-tileset_6: -298072377
-      Earth-tileset_0: -1098622817
-      Earth-tileset_4: -2118343381
-      Earth-tileset_3: 390484127
-      Earth-tileset_2: -1408983406
-      Earth-tileset_1: -358014757
+      Earth-tileset_7: -372388365
+      Earth-tileset_8: -832828653
       Earth-tileset_9: 807261421
   spritePackingTag: 
   pSDRemoveMatte: 0
