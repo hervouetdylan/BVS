@@ -151,7 +151,7 @@ public class Mouvements : MonoBehaviour
             {
                 item = hit.collider.gameObject.GetComponent<ChestScript>().item;
                 inventaire.Add(item);
-                hit.collider.gameObject.GetComponent<ChestScript>().animator.Play("Coffre");
+                //hit.collider.gameObject.GetComponent<ChestScript>().animator.Play("Coffre");
 
             }
             else if (hit.collider.gameObject.tag == "Shop")
