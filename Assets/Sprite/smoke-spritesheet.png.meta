@@ -295,13 +295,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      smoke-spritesheet_3: -1081964381
-      smoke-spritesheet_6: 2034099252
       smoke-spritesheet_0: -1982388112
       smoke-spritesheet_1: 2107341111
-      smoke-spritesheet_5: -1550331027
       smoke-spritesheet_2: -1653152254
+      smoke-spritesheet_3: -1081964381
       smoke-spritesheet_4: 250107412
+      smoke-spritesheet_5: -1550331027
+      smoke-spritesheet_6: 2034099252
       smoke-spritesheet_7: 1757159807
   spritePackingTag: 
   pSDRemoveMatte: 0

@@ -883,42 +883,42 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      srw_free_character_1-3_1_27: -827225484
-      srw_free_character_1-3_1_35: 1898668218
-      srw_free_character_1-3_1_28: -1322936990
-      srw_free_character_1-3_1_16: 1871746784
-      srw_free_character_1-3_1_22: -1399811004
-      srw_free_character_1-3_1_3: 1078535581
-      srw_free_character_1-3_1_1: 1556801289
-      srw_free_character_1-3_1_6: 245428495
-      srw_free_character_1-3_1_12: 913453348
-      srw_free_character_1-3_1_17: -116945309
-      srw_free_character_1-3_1_30: -326732820
-      srw_free_character_1-3_1_11: 158553044
       srw_free_character_1-3_1_0: 151685326
-      srw_free_character_1-3_1_8: -649916465
-      srw_free_character_1-3_1_19: 707745956
-      srw_free_character_1-3_1_34: 2076909555
-      srw_free_character_1-3_1_7: -274895052
-      srw_free_character_1-3_1_26: 1762271708
-      srw_free_character_1-3_1_9: 92063928
-      srw_free_character_1-3_1_23: 1287952090
-      srw_free_character_1-3_1_20: -1583726258
-      srw_free_character_1-3_1_5: 374234547
+      srw_free_character_1-3_1_1: 1556801289
       srw_free_character_1-3_1_10: -2056098734
-      srw_free_character_1-3_1_24: 562939239
+      srw_free_character_1-3_1_11: 158553044
+      srw_free_character_1-3_1_12: 913453348
       srw_free_character_1-3_1_13: -92098139
-      srw_free_character_1-3_1_18: -852629373
-      srw_free_character_1-3_1_29: 179825519
-      srw_free_character_1-3_1_33: 818069472
-      srw_free_character_1-3_1_2: -2006225102
-      srw_free_character_1-3_1_15: -253737211
-      srw_free_character_1-3_1_31: 1145507873
       srw_free_character_1-3_1_14: -1747338825
-      srw_free_character_1-3_1_32: -421165905
-      srw_free_character_1-3_1_25: 1654837851
-      srw_free_character_1-3_1_4: -772285111
+      srw_free_character_1-3_1_15: -253737211
+      srw_free_character_1-3_1_16: 1871746784
+      srw_free_character_1-3_1_17: -116945309
+      srw_free_character_1-3_1_18: -852629373
+      srw_free_character_1-3_1_19: 707745956
+      srw_free_character_1-3_1_2: -2006225102
+      srw_free_character_1-3_1_20: -1583726258
       srw_free_character_1-3_1_21: -1793694135
+      srw_free_character_1-3_1_22: -1399811004
+      srw_free_character_1-3_1_23: 1287952090
+      srw_free_character_1-3_1_24: 562939239
+      srw_free_character_1-3_1_25: 1654837851
+      srw_free_character_1-3_1_26: 1762271708
+      srw_free_character_1-3_1_27: -827225484
+      srw_free_character_1-3_1_28: -1322936990
+      srw_free_character_1-3_1_29: 179825519
+      srw_free_character_1-3_1_3: 1078535581
+      srw_free_character_1-3_1_30: -326732820
+      srw_free_character_1-3_1_31: 1145507873
+      srw_free_character_1-3_1_32: -421165905
+      srw_free_character_1-3_1_33: 818069472
+      srw_free_character_1-3_1_34: 2076909555
+      srw_free_character_1-3_1_35: 1898668218
+      srw_free_character_1-3_1_4: -772285111
+      srw_free_character_1-3_1_5: 374234547
+      srw_free_character_1-3_1_6: 245428495
+      srw_free_character_1-3_1_7: -274895052
+      srw_free_character_1-3_1_8: -649916465
+      srw_free_character_1-3_1_9: 92063928
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
